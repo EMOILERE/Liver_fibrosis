@@ -91,7 +91,7 @@ This simulation platform bridges the gap between molecular mechanisms and clinic
 The platform employs a modular, hierarchical architecture designed for scalability and extensibility:
 
 ```
-PhysiCell-master/user_projects/liver_fibrosis_igem/
+PhysiCell-master/liver_fibrosis/liver_fibrosis/
 ├── mathematical_core/          # Core mathematical algorithms
 │   ├── multiscale_solvers.py   # ADI, RKF, operator splitting
 │   ├── stochastic_processes.py # MCMC, Gillespie, SDE solvers
@@ -206,7 +206,7 @@ All experiments use standardized temporal parameters:
 1. **Clone the Repository**
 ```bash
    git clone https://github.com/your-org/liver-fibrosis-simulation.git
-   cd liver-fibrosis-simulation/PhysiCell-master/user_projects/liver_fibrosis_igem
+   cd liver-fibrosis-simulation/PhysiCell-master/liver_fibrosis/liver_fibrosis
    ```
 
 2. **Install Python Dependencies**
