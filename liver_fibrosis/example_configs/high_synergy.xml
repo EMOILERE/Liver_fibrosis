@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 高协同效应配置 - 用于验证强协同作用 -->
+<simulation_parameters>
+    <basic_settings>
+        <simulation_time>2880</simulation_time> <!-- 完整48小时 -->
+        <time_steps>
+            <diffusion_dt>0.01</diffusion_dt>
+            <mechanics_dt>0.1</mechanics_dt>
+            <phenotype_dt>6</phenotype_dt>
+        </time_steps>
+        <domain>
+            <size_x>800</size_x>
+            <size_y>800</size_y>
+            <resolution>20</resolution>
+        </domain>
+        <output>
+            <save_interval>60</save_interval>
+            <svg_interval>60</svg_interval>
+        </output>
+    </basic_settings>
+
+    <cell_population>
+        <initial_cell_count>100</initial_cell_count>
+        <initial_activation_fraction>0.0</initial_activation_fraction>
+        <cell_biology>
+            <quiescent_cycle_time>2000</quiescent_cycle_time>
+            <activated_cycle_time>1000</activated_cycle_time>
+            <apoptosis_rate>0.0001</apoptosis_rate>
+            <motility>
+                <quiescent_speed>0.2</quiescent_speed>
+                <activated_speed>1.0</activated_speed>
+            </motility>
+        </cell_biology>
+    </cell_population>
+
+    <microenvironment>
+        <TGF_beta1>
+            <concentration>10.0</concentration>
+            <diffusion_coefficient>50000.0</diffusion_coefficient>
+            <decay_rate>0.01</decay_rate>
+        </TGF_beta1>
+        <exosomes>
+            <concentration>50.0</concentration>
+            <diffusion_coefficient>5000.0</diffusion_coefficient>
+            <decay_rate>0.005</decay_rate>
+        </exosomes>
+        <fibrosis_markers>
+            <alpha_SMA>
+                <diffusion_coefficient>10000.0</diffusion_coefficient>
+                <decay_rate>0.02</decay_rate>
+            </alpha_SMA>
+            <collagen_I>
+                <diffusion_coefficient>5000.0</diffusion_coefficient>
+                <decay_rate>0.005</decay_rate>
+            </collagen_I>
+        </fibrosis_markers>
+    </microenvironment>
+
+    <cell_activation>
+        <TGF_beta1_response>
+            <activation_threshold>5.0</activation_threshold>
+            <activation_rate>0.01</activation_rate>
+            <deactivation_rate>0.005</deactivation_rate>
+            <hill_coefficient>2.0</hill_coefficient>
+        </TGF_beta1_response>
+        <activated_phenotype>
+            <alpha_SMA_production>
+                <quiescent_rate>0.1</quiescent_rate>
+                <activated_rate>2.0</activated_rate>
+            </alpha_SMA_production>
+            <collagen_I_production>
+                <quiescent_rate>0.05</quiescent_rate>
+                <activated_rate>1.5</activated_rate>
+            </collagen_I_production>
+        </activated_phenotype>
+    </cell_activation>
+
+    <exosome_miRNA_system>
+        <exosome_uptake>
+            <uptake_rate>1.2</uptake_rate> <!-- 稍高的摄取率 -->
+            <uptake_threshold>0.05</uptake_threshold> <!-- 更低的阈值 -->
+            <miRNA_release_efficiency>0.15</miRNA_release_efficiency> <!-- 更高的释放效率 -->
+        </exosome_uptake>
+        <miRNA_kinetics>
+            <degradation_rate>0.008</degradation_rate> <!-- 稍慢的降解 -->
+            <effect_threshold>0.08</effect_threshold> <!-- 更低的作用阈值 -->
+            <max_effect>0.85</max_effect> <!-- 更强的最大效果 -->
+            <hill_coefficient>2.5</hill_coefficient> <!-- 更陡的剂量反应 -->
+        </miRNA_kinetics>
+        <miRNA_specificity>
+            <miR_455_3p>
+                <alpha_SMA_inhibition>0.95</alpha_SMA_inhibition> <!-- 更强的特异性抑制 -->
+                <collagen_I_inhibition>0.15</collagen_I_inhibition>
+            </miR_455_3p>
+            <miR_148a_5p>
+                <alpha_SMA_inhibition>0.15</alpha_SMA_inhibition>
+                <collagen_I_inhibition>0.95</collagen_I_inhibition> <!-- 更强的特异性抑制 -->
+            </miR_148a_5p>
+        </miRNA_specificity>
+    </exosome_miRNA_system>
+
+    <synergy_mechanism>
+        <synergy_threshold>0.05</synergy_threshold> <!-- 更低的协同阈值 -->
+        <max_synergy_factor>3.5</max_synergy_factor> <!-- 强协同效应 -->
+        <synergy_model>geometric</synergy_model>
+        <synergy_delay>20</synergy_delay> <!-- 更快的协同建立 -->
+        <synergy_saturation>0.8</synergy_saturation> <!-- 较低饱和度以增强协同 -->
+    </synergy_mechanism>
+
+    <experimental_conditions>
+        <current_experiment>dual_miRNA_1_1</current_experiment>
+        <experiment_groups>
+            <control>
+                <TGF_beta1_enabled>false</TGF_beta1_enabled>
+                <exosomes_enabled>false</exosomes_enabled>
+            </control>
+            <positive_model>
+                <TGF_beta1_enabled>true</TGF_beta1_enabled>
+                <exosomes_enabled>false</exosomes_enabled>
+            </positive_model>
+            <miR_455_3p>
+                <TGF_beta1_enabled>true</TGF_beta1_enabled>
+                <exosomes_enabled>true</exosomes_enabled>
+                <miR_455_3p_ratio>1.0</miR_455_3p_ratio>
+                <miR_148a_5p_ratio>0.0</miR_148a_5p_ratio>
+            </miR_455_3p>
+            <miR_148a_5p>
+                <TGF_beta1_enabled>true</TGF_beta1_enabled>
+                <exosomes_enabled>true</exosomes_enabled>
+                <miR_455_3p_ratio>0.0</miR_455_3p_ratio>
+                <miR_148a_5p_ratio>1.0</miR_148a_5p_ratio>
+            </miR_148a_5p>
+            <dual_miRNA_1_1>
+                <TGF_beta1_enabled>true</TGF_beta1_enabled>
+                <exosomes_enabled>true</exosomes_enabled>
+                <miR_455_3p_ratio>0.5</miR_455_3p_ratio>
+                <miR_148a_5p_ratio>0.5</miR_148a_5p_ratio>
+            </dual_miRNA_1_1>
+        </experiment_groups>
+    </experimental_conditions>
+
+    <advanced_parameters>
+        <random_seed>0</random_seed>
+        <numerical_precision>
+            <tolerance>1e-6</tolerance>
+            <max_iterations>1000</max_iterations>
+        </numerical_precision>
+        <performance>
+            <omp_threads>6</omp_threads>
+            <memory_limit>8</memory_limit>
+        </performance>
+        <debugging>
+            <verbose_output>false</verbose_output>
+            <log_level>1</log_level>
+        </debugging>
+    </advanced_parameters>
+</simulation_parameters>
