@@ -91,7 +91,7 @@ This simulation platform bridges the gap between molecular mechanisms and clinic
 The platform employs a modular, hierarchical architecture designed for scalability and extensibility:
 
 ```
-PhysiCell-master/liver_fibrosis/liver_fibrosis/
+Liver_fibrosis/liver_fibrosis/
 ├── mathematical_core/          # Core mathematical algorithms
 │   ├── multiscale_solvers.py   # ADI, RKF, operator splitting
 │   ├── stochastic_processes.py # MCMC, Gillespie, SDE solvers
