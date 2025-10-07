@@ -612,14 +612,6 @@ We welcome contributions from the computational biology, systems biology, and bi
 
 ```
 
-### Related Publications
-
-- PhysiCell Framework: Ghaffarizadeh et al., PLoS Comput Biol (2018)
-- Agent-Based Modeling: Macal & North, J Simulation (2010)
-- Liver Fibrosis Mechanisms: Friedman, Nat Rev Gastroenterol Hepatol (2008)
-- miRNA Therapeutics: Rupaimoole & Slack, Nat Rev Drug Discov (2017)
-
----
 
 ## License
 
