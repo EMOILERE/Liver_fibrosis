@@ -207,23 +207,19 @@ All experiments use standardized temporal parameters:
 ```bash
    git clone https://github.com/your-org/liver-fibrosis-simulation.git
    cd liver-fibrosis-simulation/PhysiCell-master/liver_fibrosis/liver_fibrosis
-   ```
+```
 
 2. **Install Python Dependencies**
-   ```bash
-pip install -r requirements.txt
+```bash
+    pip install -r requirements.txt
 ```
 
 3. **Compile PhysiCell**
-   ```bash
+```bash
    make clean
    make -j4
-   ```
+```
 
-4. **Verify Installation**
-   ```bash
-   python run_demo.py
-   ```
 
 ### Docker Installation (Recommended)
 
