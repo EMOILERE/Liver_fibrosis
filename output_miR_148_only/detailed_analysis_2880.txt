@@ -1,0 +1,30 @@
+=== PhysiCell Enhanced Analysis at t=2880 min ===
+
+CELLULAR STATISTICS:
+Total cells: 126
+Quiescent: 21 (16.9%)
+Activated: 61 (49.1%)
+Proliferating: 9 (7.6%)
+Senescent: 9 (7.2%)
+Apoptotic: 0 (0.3%)
+
+AVERAGE CELLULAR STATES:
+Activation level: 0.491
+miR-455-3p level: 0.000
+miR-148a-5p level: 0.393
+Stress level: 0.142
+Metabolic activity: 1.036
+Stress fiber density: 0.331
+
+MICROENVIRONMENT AVERAGES:
+TGF-β1: 15.0 ng/mL
+Oxygen: 0.65
+Glucose: 0.70
+Lactate: 0.25
+α-SMA (ECM): 0.982
+Collagen I (ECM): 0.736
+
+TREATMENT ANALYSIS:
+Treatment efficacy: 37.3%
+Synergy index: 1.20 (< 1.0 indicates synergy)
+Experimental group: miR_148_only
