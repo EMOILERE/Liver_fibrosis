@@ -1,8 +1,0 @@
-Signal,Behavior,Direction,Half_max,Hill_power,Applies_to_dead,Behavior_parameters
-TGF_beta1,transition to LX2_activated,increases,5.0,2.0,false,
-miR_455_3p_effect,alpha_SMA secretion,decreases,0.5,2.0,false,
-miR_148a_5p_effect,collagen_I secretion,decreases,0.5,2.0,false,
-miR_455_3p_level,miR_455_3p_effect,increases,0.1,2.0,false,
-miR_148a_5p_level,miR_148a_5p_effect,increases,0.1,2.0,false,
-synergy_factor,miR_455_3p_effect,increases,1.0,1.0,false,
-synergy_factor,miR_148a_5p_effect,increases,1.0,1.0,false,
