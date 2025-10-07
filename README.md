@@ -21,8 +21,6 @@
 - [Biological Models](#biological-models)
 - [Visualization Suite](#visualization-suite)
 - [Performance Optimization](#performance-optimization)
-- [Contributing](#contributing)
-- [Citation](#citation)
 - [License](#license)
 
 ---
@@ -609,8 +607,6 @@ We welcome contributions from the computational biology, systems biology, and bi
 
 ---
 
-
-```
 
 
 ## License
